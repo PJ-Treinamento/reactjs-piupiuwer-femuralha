@@ -4,12 +4,12 @@ import {InputComponent} from './styles';
 
 interface InputProps  extends InputHTMLAttributes<HTMLInputElement>{
     label: string;
-    placeholder: string;
+    name: string;
 }
 
-const Input: React.FC <InputProps> = ({label, placeholder,}) => {
+const Input: React.FC <InputProps> = ({label,  ...rest}) => {
     return (
-               <InputComponent/>              
+               <InputComponent {...rest} />              
     );
 }
 

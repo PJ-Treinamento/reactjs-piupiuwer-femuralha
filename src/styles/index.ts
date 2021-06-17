@@ -12,47 +12,29 @@ export const GlobalStyle = createGlobalStyle `
                                                   background: #ffffff;
                                                   font-family: Montserrat;
                          }
-                         p{
-                              margin-bottom: 4px;
-                              margin-left: 5px;
-
+                         label{
+                              margin-top: 2px;
+                              margin-bottom: 2px;
+                              margin-left: 7px;
+                              font:  400 16px Montserrat;
                          }
-                         .div_landing{
+                         button {
+                              width: 240px;
+                              height: 64px;
+                              border-radius: 40px;
+                              margin-right: 1.6rem;
+                              font:  600 20px Montserrat;
+                              border: 1px solid #667581;
                               display: flex;
+                              align-items: center;
                               justify-content: center;
-                              flex-direction: row;
+                              color: black;
+                              text-decoration: none;
                               background-color: #FFB703;
+                              transition: all 0.5s;
+                              }
+                         button:hover{
+                              transform: scale(1.1) perspective(1px);
+                              cursor: pointer;
                          }
-                         .div_input_child{
-                                        display: flex;
-                                        align-items: center;
-                                        flex-direction: column;
-                                        align-items: flex-start;
-                                        
-                         }
-                         .div_input{
-                              height: 1024px;
-                              display: flex;
-                              flex-direction: column;
-                               align-items: center;
-                              justify-content: center;
-                         }
-                         .div_landing_right{
-                              background:url(${fundoLoginDir});
-                              height: 100%;
-                              width: 50%;
-                              max-height: 1024px;
-                              max-width: 720px;
-                         }
-
-                         .div_landing_left{
-                              background:url(${fundoLoginEsq});
-                              height: 1024;
-                              width: 50%;
-                              max-height: 1400px;
-                              max-width: 720px;
-                              background-color: #FFB703;
-                         }
-                         
-
 `
