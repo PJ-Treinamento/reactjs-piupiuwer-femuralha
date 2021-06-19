@@ -3,12 +3,12 @@ import { GlobalStyle } from '../../styles';
 
 
 
-function Feed (){
-               return(
-                              <div>
-                                             <p>salve porra</p>
-                              </div>
-               )
+function Feed() {
+  return (
+    <div>
+      <p>salve porra</p>
+    </div>
+  )
 }
 
 

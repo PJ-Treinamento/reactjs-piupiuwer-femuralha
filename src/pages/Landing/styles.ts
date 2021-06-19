@@ -24,7 +24,7 @@ export const Wrap_Esq =styled.div `
 export const Wrap_Dir =styled.div `
                background:url(${fundoLoginDir});
                height: 1024px;
-
+               padding-right: 50px;
                max-height: 1024px;
                min-width: 560px;
 `
