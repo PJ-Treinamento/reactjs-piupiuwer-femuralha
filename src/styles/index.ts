@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import fundoLoginDir from '../assets/images/dir-login.svg'
 import fundoLoginEsq from '../assets/images/esq-login.svg'
@@ -38,4 +39,23 @@ button:hover{
 		transform: scale(1.1) perspective(1px);
 		cursor: pointer;
 }
+
+ul{
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+li{
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	margin-right: 20px;
+	font-weight: bold;
+}
+a{
+	cursor: pointer;
+	text-decoration: none;
+}
 `
+
+ 

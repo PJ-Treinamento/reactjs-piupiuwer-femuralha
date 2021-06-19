@@ -8,7 +8,7 @@ import {AuthProvider} from './contexts/auth';
 function App() {
   return (
 	  <AuthProvider>
-		  <Landing />
+		  <Routes />
 	  </AuthProvider>
 	 
   );

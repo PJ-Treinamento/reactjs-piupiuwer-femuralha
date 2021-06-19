@@ -55,7 +55,10 @@ const [userData, setUserData] = useState<IUserData>(() => {
   if(user && token){
     return{user:JSON.parse(user), token}
   }
-  return {} as IUserData
+  else{
+    Error ('401 - Bad request Incorrect email/password combination')
+    return {} as IUserData
+  }
 })
 
   return (

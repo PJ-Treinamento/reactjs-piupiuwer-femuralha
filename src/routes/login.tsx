@@ -5,7 +5,7 @@ import Landing from "../pages/Landing";
 const LoginRoutes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path='/' exact component={Landing} />
+      <Route path='/'  component={Landing} />
     </BrowserRouter>
   )
 }

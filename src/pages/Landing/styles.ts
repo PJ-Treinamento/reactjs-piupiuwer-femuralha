@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
                background-color: #FFB703;                              
             
 `
-export const Wrap_Esq =styled.div `
+export const Wrap_Esq = styled.div`
                background:url(${fundoLoginEsq});
                height: 1024px;
                width: 50%;
@@ -21,14 +21,14 @@ export const Wrap_Esq =styled.div `
                               display: none;
                }
 `
-export const Wrap_Dir =styled.div `
+export const Wrap_Dir = styled.div`
                background:url(${fundoLoginDir});
                height: 1024px;
                padding-right: 50px;
                max-height: 1024px;
                min-width: 560px;
 `
-export const Div_Input =styled.div `
+export const Div_Input = styled.div`
                height: 1024px;
                display: flex;
                flex-direction: column;
@@ -38,13 +38,13 @@ export const Div_Input =styled.div `
                               margin-top: 50px;
                }
 `
-export const Div_Label =styled.div `
+export const Div_Label = styled.div`
                display: flex;
                flex-direction: column;
                align-items: flex-start;
                justify-content: center;
-`       
-export const Wrapper_Button= styled.div`
+`
+export const Wrapper_Button = styled.div`
                display: flex;
                justify-content: center;
                margin-top: 64px;

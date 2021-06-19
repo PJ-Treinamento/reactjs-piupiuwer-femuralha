@@ -1,12 +1,9 @@
-import React, { FormEvent, useState, useContext, createContext, } from 'react';
+import React, { FormEvent, useState, useContext} from 'react';
 import Input from '../../components/input/index';
-import { GlobalStyle } from '../../styles';
 import { Wrapper, Wrap_Esq, Wrap_Dir, Div_Input, Div_Label, Wrapper_Button, Logo } from './styles';
-import { Link } from 'react-router-dom'
-import axios from 'axios';
 import api from '../../services/api';
 import AuthContext from '../../contexts/auth';
-
+import { Link, Redirect } from 'react-router-dom';
 
 function Landing() {
 
@@ -15,7 +12,6 @@ function Landing() {
 
 	function onChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const { value, name } = event.target;
-
 		setValues({
 			...values,
 			[name]: value,
@@ -64,7 +60,7 @@ function Landing() {
 							/>
 						</Div_Label>
 						<Wrapper_Button>
-							<button onClick={handleLogin}>Entrar</button>
+							<Link to='/feed'><button  onClick={handleLogin}>Entrar</button></Link>
 						</Wrapper_Button>
 					</form>
 				</Div_Input>

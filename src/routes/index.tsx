@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
+
 import FeedRoutes from "./feed";
 import LoginRoutes from "./login";
-import { useState } from "react";
+
+import AuthContext from "../contexts/auth";
 
 const Routes: React.FC = () => {
-  return (
-    <LoginRoutes />
-  )
+  const {signed} = useContext(AuthContext);
+  
+  return signed ? <FeedRoutes  /> : <LoginRoutes/>
 }
 
 export default Routes
