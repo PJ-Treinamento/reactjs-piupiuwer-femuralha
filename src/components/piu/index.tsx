@@ -10,7 +10,7 @@ import { Wrapper,
   Share_btn
      } from "./styles";
 
-interface Piu {
+export interface Piu {
 	id: string;
 	user: User;
 	likes: PiuLike[];
@@ -37,14 +37,14 @@ interface User {
 	followers: User[];
 	favorites: Piu[];
 }
+ interface PiuProps {
+  id: string;
+  likes: PiuLike[];
+  text: string;
+  username?: string;
+ }
 
-function PiuComp() {
-
-  const piuReq = async () => {
-    const req = await api.get('pius');
-    const [text] = req.data
-    console.log(JSON.stringify(text))
-  }
+const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
 
   return(
     <Wrapper>
@@ -52,14 +52,14 @@ function PiuComp() {
         <img className='Profile-pic' src='https://i.imgur.com/gc3e2uG.jpg'/>
         <div className='Wrap-flex'>
           <Like_btn/>
-          <p className='Count'>0</p>
+          <p className='Count'>{likes.length}</p>
           <Share_btn/>
           <p className='Count'>0</p>
         </div>
       </Piu_interaction>
       <Piu_content>
-        <h2>Piuwer</h2>
-        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+        <h2>{user.username}</h2>
+        <p>{text}</p>
       </Piu_content>
       <Piu_comments>
         <input className='Input-Comment' placeholder='Comentários' type="text" />

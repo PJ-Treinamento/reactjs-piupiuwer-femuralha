@@ -1,10 +1,10 @@
 
-import React, {useState} from 'react';
-import { useEffect } from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import PiuComp from '../../components/piu';
 import api from '../../services/api';
 import { GlobalStyle } from '../../styles';
-
+import AuthContext from '../../contexts/auth';
+import { Piu } from '../../components/piu';
 
 import { 
   Button_feed,
@@ -15,19 +15,22 @@ import {
   Timeline, Aside,
   Wrap
   } from './styles';
+import { render } from '@testing-library/react';
 
 function Feed() {
+  const {token} = useContext(AuthContext);
+  const [pius, setPius] = useState <Piu[]> ([])
 
-  const [pius, Setpius] = useState(null)
-
-  const fetchData = async () => {
-
-  const response = await api.get('/pius')
-
-  Setpius(response.data)
-  }
-
+  useEffect(() =>{
+    const fetchData = async () => {
   
+      const response = await api.get('/pius', {
+        headers: { authorization: `Bearer ${token}` }
+      })
+      setPius(response.data)
+      }
+      fetchData()
+  }, [])
 
   return (
     <div>
@@ -45,10 +48,12 @@ function Feed() {
       <Wrapper_down>
         <Aside></Aside>
         <Timeline>
-          <button onClick={fetchData}></button>
-          <PiuComp/>
-          <PiuComp/>
-          <PiuComp/>
+          {pius.map( (piu) => {
+            return(
+             <PiuComp {...piu}/>
+            )
+
+          } ) }
         </Timeline>
       </Wrapper_down>
     </Wrap>
