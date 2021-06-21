@@ -1,6 +1,5 @@
-import { async } from "q";
+
 import React, { createContext, useContext, useState } from "react";
-import api from "../services/api";
 
 interface AuthContextData {
   signed: boolean;
@@ -53,10 +52,9 @@ const [userData, setUserData] = useState<IUserData>(() => {
   const user = localStorage.getItem('@PiuPiuwer:user');
 
   if(user && token){
-    return{user:JSON.parse(user), token}
+    return{token, user:JSON.parse(user)}
   }
   else{
-    Error ('401 - Bad request Incorrect email/password combination')
     return {} as IUserData
   }
 })

@@ -20,6 +20,9 @@ label{
 		margin-left: 7px;
 		font:  400 16px Montserrat;
 }
+h2{
+	font:600 16px Montserrat;;
+}
 button {
 		width: 240px;
 		height: 56px;
@@ -55,6 +58,33 @@ li{
 a{
 	cursor: pointer;
 	text-decoration: none;
+}
+
+
+.Count{
+	font:600 10px Montserrat;
+	margin-left: 2px;
+}
+.Wrap-flex{
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Input-Comment{
+	background: rgba(209, 209, 209, 0.2);
+	border-radius: 8px;
+	width: 182px;
+	height: 25px;
+	border: 1px #667581;
+}
+.Profile-pic{
+	height: 35px;
+  width: 35px;
+  margin-top: 2px;
+  margin-left: 5px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 `
 

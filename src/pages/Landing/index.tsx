@@ -26,9 +26,8 @@ function Landing() {
 		localStorage.setItem("@PiuPiuwer:token", token)
 		localStorage.setItem("@PiuPiuwer:user", JSON.stringify(user))
 	  setUserData({token, user})
+		
 	};
-
-
 
 
 
