@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import AuthContext from "../../contexts/auth";
 import api from "../../services/api";
 
 import { Wrapper, 
@@ -7,7 +8,8 @@ import { Wrapper,
   Piu_content,
   Profile_pic,
   Like_btn,
-  Share_btn
+  Share_btn,
+  Delete
      } from "./styles";
 
 export interface Piu {
@@ -45,11 +47,15 @@ interface User {
  }
 
 const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
-
+  
+  const {token} = useContext(AuthContext);
+  const deletePiu = async () => {
+		const deleteResponse = await api.delete('/pius',{headers: { authorization: `Bearer ${token}` }})
+	};
   return(
     <Wrapper>
       <Piu_interaction>
-        <img className='Profile-pic' src='https://i.imgur.com/gc3e2uG.jpg'/>
+        <img className='Profile-pic' src={user.photo}/>
         <div className='Wrap-flex'>
           <Like_btn/>
           <p className='Count'>{likes.length}</p>
@@ -59,8 +65,9 @@ const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
       </Piu_interaction>
       <Piu_content>
         <h2>{user.username}</h2>
-        <p>{text}</p>
+        <p className='Content_piu'>{text}</p>
       </Piu_content>
+      <Delete onClick={deletePiu} id={id}/>
       <Piu_comments>
         <input className='Input-Comment' placeholder='Comentários' type="text" />
       </Piu_comments>

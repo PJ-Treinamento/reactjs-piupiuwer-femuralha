@@ -64,3 +64,19 @@ export const Timeline = styled.div`
   background: #fff;
   border-radius: 12px;
 `
+export const  PiuPost = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 72px;
+  border-bottom: 1px solid black;
+
+`
+export const PostPiu = styled.button` 
+  width: 90px;
+  height: 30px;
+  margin-left: 8px;
+  font: 700 16px Montserrat;
+  border: 0px;
+  `

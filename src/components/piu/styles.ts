@@ -19,11 +19,12 @@ export const Piu_interaction = styled.div`
 `
 export const Piu_content = styled.div`
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: start;
+  justify-content: start;
   flex-direction: column;
   margin-left: 8px;
-  max-width: 384px;
+  width: 384px;
+  min-height: 142px;
   font: 300 16px Montserrat;
 `
 export const Piu_comments = styled.div`
@@ -70,4 +71,8 @@ export const Like_btn = styled.div`
   margin-bottom: -8px;
   background-size: 25px 25px;
   
+`
+export const Delete = styled.button`
+height:10px;
+width: 10px;
 `

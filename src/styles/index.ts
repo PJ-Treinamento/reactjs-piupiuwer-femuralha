@@ -86,6 +86,10 @@ a{
   border-radius: 50%;
   object-fit: cover;
 }
+.Content_piu{
+	font: 400 15px Montserrat;
+	margin-top: -5px;
+}
 `
 
  
