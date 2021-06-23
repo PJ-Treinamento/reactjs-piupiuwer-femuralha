@@ -70,6 +70,13 @@ const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
       setLikeCount(likeCount - 1)
     }
   }
+  
+
+  const piuFav = async () => {
+    const favResponse = await api.post('/pius/favorite',
+    {'piu_id':id},
+    {headers: { authorization: `Bearer ${token}` }})
+  }
 
   return(
     <Wrapper>
@@ -78,8 +85,7 @@ const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
         <div className='Wrap-flex'>
           <Like_btn onClick={piuLike}/>
           <p className='Count'>{likes.length + likeCount}</p>
-          <Share_btn/>
-          <p className='Count'>0</p>
+          <Share_btn onClick={piuFav}/>
         </div>
       </Piu_interaction>
       <Piu_content>
