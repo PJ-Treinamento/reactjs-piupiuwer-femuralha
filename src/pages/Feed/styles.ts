@@ -80,3 +80,6 @@ export const PostPiu = styled.button`
   font: 700 16px Montserrat;
   border: 0px;
   `
+export const CountParagraph = styled.p`
+  margin-left: 10px;
+`

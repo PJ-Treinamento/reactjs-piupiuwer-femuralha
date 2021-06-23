@@ -1,6 +1,6 @@
 import React, { FormEvent, useState, useContext} from 'react';
 import Input from '../../components/input/index';
-import { Wrapper, Wrap_Esq, Wrap_Dir, Div_Input, Div_Label, Wrapper_Button, Logo } from './styles';
+import { Wrapper, Wrap_Esq, Wrap_Dir, Div_Input, Div_Label, Wrapper_Button, Logo, Logo_gigante } from './styles';
 import api from '../../services/api';
 import AuthContext from '../../contexts/auth';
 import { Link, Redirect } from 'react-router-dom';
@@ -29,14 +29,14 @@ function Landing() {
 		
 	};
 
-
-
 	return (
 		<Wrapper>
-			<Wrap_Esq />
+			<Wrap_Esq>
+				<Logo_gigante/>
+			</Wrap_Esq>
 			<Wrap_Dir>
 				<Div_Input>
-					<Logo />
+					<Logo/>
 					<form >
 						<Div_Label>
 							<label htmlFor="User"> User</label>
@@ -51,6 +51,7 @@ function Landing() {
 						<Div_Label>
 							<label htmlFor="password"> Senha</label>
 							<Input
+							type='password'
 								id='password'
 								name='password'
 								label='password'

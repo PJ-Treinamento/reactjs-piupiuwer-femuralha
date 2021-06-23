@@ -9,7 +9,8 @@ import { Wrapper,
   Profile_pic,
   Like_btn,
   Share_btn,
-  Delete
+  Delete,
+  Delete_div
      } from "./styles";
 
 export interface Piu {
@@ -50,15 +51,33 @@ const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
   
   const {token} = useContext(AuthContext);
   const deletePiu = async () => {
-		const deleteResponse = await api.delete('/pius',{headers: { authorization: `Bearer ${token}` }})
+    if( user.id==='4c17b2e6-b3d9-4ba0-aac0-29e3623bf61e'){
+      const deleteResponse = await api.delete('/pius',
+      { data: {piu_id:id},
+      headers: { authorization: `Bearer ${token}` }})}
 	};
+
+  const[likeCount,setLikeCount] = useState(0)
+
+  const piuLike = async () => {
+    const likeResponse = await api.post('/pius/like',
+    {'piu_id':id},
+    {headers: { authorization: `Bearer ${token}` }})
+    if (likeResponse.data.operation === 'like'){
+      setLikeCount(likeCount + 1)
+    }
+    else{
+      setLikeCount(likeCount - 1)
+    }
+  }
+
   return(
     <Wrapper>
       <Piu_interaction>
         <img className='Profile-pic' src={user.photo}/>
         <div className='Wrap-flex'>
-          <Like_btn/>
-          <p className='Count'>{likes.length}</p>
+          <Like_btn onClick={piuLike}/>
+          <p className='Count'>{likes.length + likeCount}</p>
           <Share_btn/>
           <p className='Count'>0</p>
         </div>
@@ -67,7 +86,9 @@ const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
         <h2>{user.username}</h2>
         <p className='Content_piu'>{text}</p>
       </Piu_content>
-      <Delete onClick={deletePiu} id={id}/>
+      <Delete_div>
+        <Delete onClick={deletePiu} id={id}>Del</Delete>
+      </Delete_div>
       <Piu_comments>
         <input className='Input-Comment' placeholder='Comentários' type="text" />
       </Piu_comments>

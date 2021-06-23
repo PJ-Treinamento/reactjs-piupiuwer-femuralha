@@ -15,7 +15,8 @@ import {
   Timeline, Aside,
   Wrap,
   PiuPost,
-  PostPiu
+  PostPiu,
+  CountParagraph
   } from './styles';
 import { render } from '@testing-library/react';
 import Input from '../../components/input';
@@ -43,9 +44,7 @@ function Feed() {
       text: values.text},
       {headers: { authorization: `Bearer ${token}` }})
     const {text} = postResponse.data
-    console.log(text)
 	};
-
 	function onChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const { value, name } = event.target;
 		setValues({
@@ -54,6 +53,8 @@ function Feed() {
 		})
 
 	}
+
+   const count = values.text.length
 
   return (
     <div>
@@ -74,10 +75,12 @@ function Feed() {
           <PiuPost>
             <img className='Profile-pic' src={`${user.photo}`} alt="" />
             <Input id='text'
+            type='text'
                 name='text'
                 label='Text'
                 onChange={onChange}
-                ></Input>
+            />
+                <CountParagraph>{count}/140</CountParagraph>
             <PostPiu onClick={postPiu}>Piu</PostPiu> 
           </PiuPost>
           {pius.map( (piu) => {

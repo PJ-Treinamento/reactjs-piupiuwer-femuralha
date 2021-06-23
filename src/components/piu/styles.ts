@@ -26,6 +26,7 @@ export const Piu_content = styled.div`
   width: 384px;
   min-height: 142px;
   font: 300 16px Montserrat;
+  word-break: break-all;
 `
 export const Piu_comments = styled.div`
   display: flex;
@@ -70,9 +71,20 @@ export const Like_btn = styled.div`
   margin-top: 2px;
   margin-bottom: -8px;
   background-size: 25px 25px;
-  
+  cursor: pointer;
+`
+export const Delete_div= styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  width: 10px;
+  height: 118px;
+
 `
 export const Delete = styled.button`
-height:10px;
-width: 10px;
+  height:15px;
+  width: 30px;
+  font: 600 10px Montserrat;
+  margin-right: 35px;
 `
