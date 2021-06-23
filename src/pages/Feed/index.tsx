@@ -16,7 +16,9 @@ import {
   Wrap,
   PiuPost,
   PostPiu,
-  CountParagraph
+  CountParagraph,
+  H2_busca,
+  Search_input
   } from './styles';
 import { render } from '@testing-library/react';
 import Input from '../../components/input';
@@ -70,7 +72,9 @@ function Feed() {
   </Header>
     <Wrap>
       <Wrapper_down>
-        <Aside></Aside>
+        <Aside>
+          <Search_input placeholder='Busca...'/>
+        </Aside>
         <Timeline>
           <PiuPost>
             <img className='Profile-pic' src={`${user.photo}`} alt="" />

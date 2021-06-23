@@ -71,7 +71,8 @@ const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
     }
   }
   
-
+//Não tive tempo de acabar o fav :(
+  
   const piuFav = async () => {
     const favResponse = await api.post('/pius/favorite',
     {'piu_id':id},

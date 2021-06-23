@@ -47,7 +47,12 @@ export const Wrapper_down = styled.div`
 `
 export const Aside = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 400px;
+  margin-top: 20px;
+  margin-right: 15px;
   min-width: 100px;
   margin-right: 16px;
   @media (max-width:1024px){
@@ -82,4 +87,21 @@ export const PostPiu = styled.button`
   `
 export const CountParagraph = styled.p`
   margin-left: 10px;
+`
+export const H2_busca = styled.h2`
+margin-left:3px;`
+
+export const Search_input = styled.input`
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #e6ecf0;
+width: 55%;
+min-width: 380px;		
+height: 40px;
+padding: 5px;
+font-size: 16px;
+color:#667581;
+border-radius: 16px;
+margin-left: 5px;
 `
