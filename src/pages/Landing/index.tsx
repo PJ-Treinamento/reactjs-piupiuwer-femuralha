@@ -26,13 +26,13 @@ function Landing() {
 		localStorage.setItem("@PiuPiuwer:token", token)
 		localStorage.setItem("@PiuPiuwer:user", JSON.stringify(user))
 	  setUserData({token, user})
-		
+		window.location.reload()
 	};
 
 	return (
 		<Wrapper>
 			<Wrap_Esq>
-				<Logo_gigante/>
+				<Logo/>
 			</Wrap_Esq>
 			<Wrap_Dir>
 				<Div_Input>
@@ -60,7 +60,8 @@ function Landing() {
 							/>
 						</Div_Label>
 						<Wrapper_Button>
-							<Link to='/feed'><button  onClick={handleLogin}>Entrar</button></Link>
+							<button  onClick={handleLogin}>Entrar</button>
+							<button><Link to='/reg'>Registro</Link></button>
 						</Wrapper_Button>
 					</form>
 				</Div_Input>

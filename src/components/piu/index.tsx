@@ -18,8 +18,8 @@ export interface Piu {
 	user: User;
 	likes: PiuLike[];
 	text: string;
-	created_at: Date;
-	updated_at: Date;
+	created_at?: Date;
+	updated_at?: Date;
 }
 interface PiuLike {
 	id: string;
@@ -42,20 +42,20 @@ interface User {
 }
  interface PiuProps {
   id: string;
-  likes: PiuLike[];
+  likes?: PiuLike[];
   text: string;
   username?: string;
  }
 
 const PiuComp: React.FC <Piu> = ({id , likes, text, user }) => {
   
+  
   const {token} = useContext(AuthContext);
   const deletePiu = async () => {
-    if( user.id==='4c17b2e6-b3d9-4ba0-aac0-29e3623bf61e'){
       const deleteResponse = await api.delete('/pius',
       { data: {piu_id:id},
       headers: { authorization: `Bearer ${token}` }})}
-	};
+
 
   const[likeCount,setLikeCount] = useState(0)
 

@@ -26,7 +26,6 @@ import Input from '../../components/input';
 function Feed() {
   const {token, user} = useContext(AuthContext);
   const [pius, setPius] = useState <Piu[]> ([])
-
   useEffect(() =>{
     const fetchData = async () => {
   
@@ -46,6 +45,7 @@ function Feed() {
       text: values.text},
       {headers: { authorization: `Bearer ${token}` }})
     const {text} = postResponse.data
+    window.location.reload()
 	};
 	function onChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const { value, name } = event.target;
@@ -56,7 +56,9 @@ function Feed() {
 
 	}
 
-   const count = values.text.length
+  const count = values.text.length
+
+  const [searchTerm, setSearchTerm] = useState('')
 
   return (
     <div>
@@ -73,7 +75,10 @@ function Feed() {
     <Wrap>
       <Wrapper_down>
         <Aside>
-          <Search_input placeholder='Busca...'/>
+          <Search_input placeholder='Busca...' 
+          onChange={(event) => {setSearchTerm(event.target.value)
+          }}
+          />
         </Aside>
         <Timeline>
           <PiuPost>
@@ -87,7 +92,12 @@ function Feed() {
                 <CountParagraph>{count}/140</CountParagraph>
             <PostPiu onClick={postPiu}>Piu</PostPiu> 
           </PiuPost>
-          {pius.map( (piu) => {
+          {pius.map( (piu) => { if( searchTerm === '' 
+          || piu.user.username.toLowerCase().includes(searchTerm.toLowerCase())
+          || piu.user.first_name.toLowerCase().includes(searchTerm.toLowerCase())
+          || piu.user.last_name.toLowerCase().includes(searchTerm.toLowerCase())
+          || piu.text.toLowerCase().includes(searchTerm.toLowerCase())
+          )
             return(
              <PiuComp {...piu}/>
             )

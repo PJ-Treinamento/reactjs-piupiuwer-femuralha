@@ -28,6 +28,7 @@ button {
 		height: 56px;
 		border-radius: 40px;
 		margin-right: 1.6rem;
+		margin-bottom: 8px;
 		font:  600 20px Montserrat;
 		border: 1px solid #667581;
 		display: flex;

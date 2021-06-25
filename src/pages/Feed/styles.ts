@@ -27,6 +27,14 @@ export const Galinha = styled.div`
   display: flex;
   height: 60px;
   width: 60px;
+  animation: rotation 5s infinite linear;
+  @keyframes rotation {
+  from {
+    transform: rotate3d(0,0,0,0deg);
+  }
+  to {
+    transform: rotate3d(0,1,0,359deg);
+  }}
 `
 export const Button_feed = styled.button`
   display: flex;
@@ -68,6 +76,7 @@ export const Timeline = styled.div`
   margin-top: 13px;
   background: #fff;
   border-radius: 12px;
+  
 `
 export const  PiuPost = styled.form`
   display: flex;
@@ -76,7 +85,7 @@ export const  PiuPost = styled.form`
   flex-direction: row;
   height: 72px;
   border-bottom: 1px solid black;
-
+               
 `
 export const PostPiu = styled.button` 
   width: 90px;

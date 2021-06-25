@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   margin-top: 5px;
   border-bottom: 1px solid black;
   border-radius: 8px;
+
 `
 export const Piu_interaction = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ export const Piu_content = styled.div`
   min-height: 142px;
   font: 300 16px Montserrat;
   word-break: break-all;
+
 `
 export const Piu_comments = styled.div`
   display: flex;
